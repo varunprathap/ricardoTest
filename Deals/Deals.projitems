@@ -9,6 +9,13 @@
     <Import_RootNamespace>Deals</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DealViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Deal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DealItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
   </ItemGroup>
 </Project>

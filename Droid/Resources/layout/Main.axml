@@ -1,4 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-    <Button android:id="@+id/myButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/hello" />
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:scrollbars="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <Refractored.Fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@@mipmap/ic_add"
+        android:layout_margin="16dp"
+        fab:fab_colorNormal="@color/button_normal"
+        fab:fab_colorPressed="@color/button_clicked"
+        fab:fab_colorRipple="@color/ripple" />
+</RelativeLayout>

@@ -83,6 +83,18 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="CommonServiceLocator">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\netstandard2.0\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\xamarin.ios10\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\xamarin.ios10\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\xamarin.ios10\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -98,6 +110,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

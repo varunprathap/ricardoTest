@@ -1,1 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <color name="button_normal">#d50000</color>
+    <color name="button_clicked">#f44336</color>
+    <color name="ripple">#ffebee</color>
+    <color name="deal_title">#616161</color>
+    <color name="white">#ffffff</color>
+    <color name="colorAccent">#ffffff</color>
+
+</resources>

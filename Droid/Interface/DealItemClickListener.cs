@@ -1,10 +1,10 @@
 ﻿using System;
+using Android.Widget;
+
 namespace Deals.Droid.Interface
 {
-    public class DealItemClickListener
+    public interface IDealItemClickListener
     {
-        public DealItemClickListener()
-        {
-        }
+        void OnDealItemClick(int pos, Deal deal, ImageView imageView);
     }
 }
