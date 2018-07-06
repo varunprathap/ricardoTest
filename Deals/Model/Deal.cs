@@ -21,6 +21,9 @@ namespace Deals
         //Image for this deal:
         public string mImageUrl;
 
+        //Tag for this deal:
+        public string mTags;
+
 
 
         // Return the ID of the deal:
@@ -52,6 +55,11 @@ namespace Deals
         public string ImageUrl
         {
             get { return mImageUrl; }
+        }
+
+        //Return the tags of the deal:
+        public string Tags{
+            get { return mTags; }
         }
 
 

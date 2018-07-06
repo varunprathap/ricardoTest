@@ -13,6 +13,7 @@ namespace Deals.ViewModel
 
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<DealViewModel>();
+            SimpleIoc.Default.Register<DetailDealVM>();
         }
 
 
@@ -25,6 +26,7 @@ namespace Deals.ViewModel
         }
 
         public static DealViewModel dealViewModel => ServiceLocator.Current.GetInstance<DealViewModel>();
+        public static DetailDealVM detailViewModel => ServiceLocator.Current.GetInstance<DetailDealVM>();
     }
 
 }

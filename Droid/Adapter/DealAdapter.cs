@@ -5,37 +5,33 @@ using Android.Graphics;
 using Android.Content.Res;
 using Android.Widget;
 using Deals.ViewModel;
-using Deals.Model;
+using System.ComponentModel;
 
 namespace Deals.Droid.Adapter
 {
-    public class DealAdapter: RecyclerView.Adapter
+    public class DealAdapter : RecyclerView.Adapter
     {
-       
+        public Filter Filter { get; private set; }
 
         // Load the adapter with the data set
         public DealAdapter()
         {
-           
+            ViewModelLocator.dealViewModel.PropertyChanged -= DealViewModelOnPropertyChanged;
+            ViewModelLocator.dealViewModel.PropertyChanged += DealViewModelOnPropertyChanged;
         }
 
+        private void DealViewModelOnPropertyChanged(object sender,PropertyChangedEventArgs args){
 
+            this.NotifyDataSetChanged();
+        }
 
         // Fill in the contents of the photo card (invoked by the layout manager):
         public override void
             OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            DealAdapterViewHolder vh = holder as DealAdapterViewHolder;
-            Resources res = Android.App.Application.Context.Resources;
-            // Set the ImageView and TextView in this ViewHolder's CardView 
-            // from this position in the photo album:
-            int id = (int)typeof(Resource.Drawable).GetField(ViewModelLocator.dealViewModel.Deals[position].ImageUrl).GetValue(null);
-            // Converting Drawable Resource to Bitmap
-            var myImage = BitmapFactory.DecodeResource(res, id);
-            vh.Image.SetImageBitmap(myImage);
-            vh.Caption.Text = ViewModelLocator.dealViewModel.Deals[position].Caption;
-            vh.Percentage.Text = ViewModelLocator.dealViewModel.Deals[position].Percentage.ToString()+"%";
-            vh.Image.TransitionName = ViewModelLocator.dealViewModel.Deals[position].ImageUrl;
+            var item = ViewModelLocator.dealViewModel.Deals[position];
+            ((DealAdapterViewHolder)holder).BindDealViewModel(item);
+    
         }
 
         // Return the number of photos available in the photo album:
@@ -44,13 +40,13 @@ namespace Deals.Droid.Adapter
             get { return ViewModelLocator.dealViewModel.Deals.Count; }
         }
 
+       
+
         // Raise an event when the item-click takes place:
         void OnClick(int position, ImageView view)
         {
-            var item = new DealItem();
-            item.mDeal = ViewModelLocator.dealViewModel.Deals[position];
-            item.mImage = view;
-            ViewModelLocator.dealViewModel.NavigateCommand.Execute(item);
+
+            ViewModelLocator.dealViewModel.NavigateCommand.Execute(ViewModelLocator.dealViewModel.Deals[position]);
            
         }
 
@@ -64,6 +60,10 @@ namespace Deals.Droid.Adapter
             // Create a ViewHolder to find and hold these view references, and 
             // register OnClick with the view holder:
             DealAdapterViewHolder vh = new DealAdapterViewHolder(itemView, OnClick);
+
+
+           
+
             return vh;
         }
     }

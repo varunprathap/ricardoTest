@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -28,8 +29,24 @@ namespace Deals.Droid.Adapter
 
 
             // Detect user clicks on the item view and report which item
-            // was clicked (by layout position) to the listener:
             itemView.Click += (sender, e) => listener(base.LayoutPosition, Image);
+        }
+
+
+        public void BindDealViewModel(Deal deal)
+        {
+            Resources res = Android.App.Application.Context.Resources;
+            // Set the ImageView and TextView in this ViewHolder's CardView 
+            // from this position in the photo album:
+            int id = (int)typeof(Resource.Drawable).GetField(deal.ImageUrl).GetValue(null);
+            // Converting Drawable Resource to Bitmap
+            var myImage = BitmapFactory.DecodeResource(res, id);
+            Image.SetImageBitmap(myImage);
+            Caption.Text = deal.Caption;
+            Percentage.Text = deal.Percentage.ToString() + "%";
+            Image.TransitionName = deal.ImageUrl;
+
+
         }
     }
 

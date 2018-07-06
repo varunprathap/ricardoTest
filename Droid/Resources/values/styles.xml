@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-  <style name="AppTheme" parent="android:Theme.Material.Light">
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <!-- enable window content transitions -->
     <item name="android:windowContentTransitions">true</item>
-    <!-- enable overlapping of exiting and entering activities-->
     <item name="android:windowAllowEnterTransitionOverlap">true</item>
     <item name="android:windowAllowReturnTransitionOverlap">true</item>
   </style>
