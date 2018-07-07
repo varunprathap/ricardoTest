@@ -3,4 +3,5 @@
     <string name="hello">Hello World, Click Me!</string>
     <string name="app_name">Deals.Droid</string>
     <string name="search">Search</string>
+    <string name="buy_now">Buy It Now</string>
 </resources>

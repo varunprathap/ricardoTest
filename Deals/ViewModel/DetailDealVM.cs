@@ -59,7 +59,10 @@ namespace Deals.ViewModel
         public RelayCommand GoBackCommand => _goBackCommand ?? (_goBackCommand = new RelayCommand(() => navigationService.GoBack()));
 
         private RelayCommand _addFavourite;
-        public RelayCommand AddFavourite => _addFavourite ?? (_addFavourite = new RelayCommand(() => { }));
+        public RelayCommand AddFavourite => _addFavourite ?? (_addFavourite = new RelayCommand(() => {
+
+            Favourite = !Favourite;
+        }));
 
     }
 }

@@ -15,11 +15,11 @@
         android:id="@+id/content"
         android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
             <FrameLayout
                 android:layout_width="match_parent"
@@ -35,8 +35,9 @@
                     android:layout_height="@dimen/percentage_size"
                     android:layout_gravity="bottom|end"
                     android:layout_margin="16dp"
-                    android:background="@drawable/info_background"
+                    android:background="@drawable/fav_background"
                     android:elevation="4dp"
+                    android:scaleType="centerCrop"
                     android:stateListAnimator="@anim/button_raise" />
             </FrameLayout>
             <FrameLayout
@@ -60,9 +61,19 @@
                 android:layout_marginBottom="24dp"
                 android:textSize="20sp"
                 android:lineSpacingMultiplier="1.2" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_below="@id/content"
+            android:layout_height="wrap_content"
+            android:text="@string/buy_now"
+            android:background="@android:color/holo_blue_light"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
 </RelativeLayout>

@@ -17,6 +17,7 @@ using GalaSoft.MvvmLight.Helpers;
 using GalaSoft.MvvmLight.Views;
 using JimBobBennett.MvvmLight.AppCompat;
 using Android.Widget;
+using System.ComponentModel;
 
 namespace Deals.Droid
 {
@@ -34,7 +35,8 @@ namespace Deals.Droid
         private TextView _mDescription;
         public TextView MDescription => _mDescription ?? (_mDescription = FindViewById<TextView>(Resource.Id.description));
 
-
+        private ImageButton _mFavourite;
+        public ImageButton MFavourite => _mFavourite ?? (_mFavourite = FindViewById<ImageButton>(Resource.Id.favorite));
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -52,6 +54,9 @@ namespace Deals.Droid
             detailDealVM = ViewModelLocator.detailViewModel;
             detailDealVM.Title = param.mCaption;
             detailDealVM.Description = param.mDesc;
+            detailDealVM.Favourite = param.mFav;
+
+            ToggleFavourite(detailDealVM.Favourite);
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             toolbar.SetBackgroundColor(Color.ParseColor("#d50000"));
@@ -63,6 +68,8 @@ namespace Deals.Droid
             toolbar.SetNavigationIcon(Resource.Mipmap.ic_arrow_back);
 
             toolbar.SetCommand("NavigationOnClick", detailDealVM.GoBackCommand);
+
+            MFavourite.SetCommand("Click", detailDealVM.AddFavourite);
 
             BindView();
 
@@ -83,6 +90,33 @@ namespace Deals.Droid
             _bindings.Add(this.SetBinding(() => detailDealVM.Title, () => MTitle.Text, BindingMode.Default));
             _bindings.Add(this.SetBinding(() => detailDealVM.Description, () => MDescription.Text, BindingMode.Default));
 
+            detailDealVM.PropertyChanged -= DetailViewModelOnPropertyChanged;
+            detailDealVM.PropertyChanged += DetailViewModelOnPropertyChanged;
+
+        }
+
+        private void DetailViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+
+            if (args.PropertyName == "Favourite")
+            {
+                ToggleFavourite(detailDealVM.Favourite);
+
+            }
+        }
+
+        private void ToggleFavourite(bool value)
+        {
+
+            if (value)
+            {
+                MFavourite.SetImageResource(Resource.Mipmap.ic_favorite);
+
+            }
+            else
+            {
+                MFavourite.SetImageResource(Resource.Mipmap.ic_favorite_border);
+            }
         }
 
         public AppCompatNavigationService Nav

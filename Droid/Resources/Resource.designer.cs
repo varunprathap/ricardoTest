@@ -1279,44 +1279,44 @@ namespace Deals.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a0052
-			public const int abc_background_cache_hint_selector_material_dark = 2131361874;
-			
 			// aapt resource value: 0x7f0a0053
-			public const int abc_background_cache_hint_selector_material_light = 2131361875;
+			public const int abc_background_cache_hint_selector_material_dark = 2131361875;
 			
 			// aapt resource value: 0x7f0a0054
-			public const int abc_btn_colored_borderless_text_material = 2131361876;
+			public const int abc_background_cache_hint_selector_material_light = 2131361876;
 			
 			// aapt resource value: 0x7f0a0055
-			public const int abc_btn_colored_text_material = 2131361877;
+			public const int abc_btn_colored_borderless_text_material = 2131361877;
 			
 			// aapt resource value: 0x7f0a0056
-			public const int abc_color_highlight_material = 2131361878;
+			public const int abc_btn_colored_text_material = 2131361878;
 			
 			// aapt resource value: 0x7f0a0057
-			public const int abc_hint_foreground_material_dark = 2131361879;
+			public const int abc_color_highlight_material = 2131361879;
 			
 			// aapt resource value: 0x7f0a0058
-			public const int abc_hint_foreground_material_light = 2131361880;
+			public const int abc_hint_foreground_material_dark = 2131361880;
+			
+			// aapt resource value: 0x7f0a0059
+			public const int abc_hint_foreground_material_light = 2131361881;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int abc_input_method_navigation_guard = 2131361796;
 			
-			// aapt resource value: 0x7f0a0059
-			public const int abc_primary_text_disable_only_material_dark = 2131361881;
-			
 			// aapt resource value: 0x7f0a005a
-			public const int abc_primary_text_disable_only_material_light = 2131361882;
+			public const int abc_primary_text_disable_only_material_dark = 2131361882;
 			
 			// aapt resource value: 0x7f0a005b
-			public const int abc_primary_text_material_dark = 2131361883;
+			public const int abc_primary_text_disable_only_material_light = 2131361883;
 			
 			// aapt resource value: 0x7f0a005c
-			public const int abc_primary_text_material_light = 2131361884;
+			public const int abc_primary_text_material_dark = 2131361884;
 			
 			// aapt resource value: 0x7f0a005d
-			public const int abc_search_url_text = 2131361885;
+			public const int abc_primary_text_material_light = 2131361885;
+			
+			// aapt resource value: 0x7f0a005e
+			public const int abc_search_url_text = 2131361886;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int abc_search_url_text_normal = 2131361797;
@@ -1327,29 +1327,29 @@ namespace Deals.Droid
 			// aapt resource value: 0x7f0a0007
 			public const int abc_search_url_text_selected = 2131361799;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int abc_secondary_text_material_dark = 2131361886;
-			
 			// aapt resource value: 0x7f0a005f
-			public const int abc_secondary_text_material_light = 2131361887;
+			public const int abc_secondary_text_material_dark = 2131361887;
 			
 			// aapt resource value: 0x7f0a0060
-			public const int abc_tint_btn_checkable = 2131361888;
+			public const int abc_secondary_text_material_light = 2131361888;
 			
 			// aapt resource value: 0x7f0a0061
-			public const int abc_tint_default = 2131361889;
+			public const int abc_tint_btn_checkable = 2131361889;
 			
 			// aapt resource value: 0x7f0a0062
-			public const int abc_tint_edittext = 2131361890;
+			public const int abc_tint_default = 2131361890;
 			
 			// aapt resource value: 0x7f0a0063
-			public const int abc_tint_seek_thumb = 2131361891;
+			public const int abc_tint_edittext = 2131361891;
 			
 			// aapt resource value: 0x7f0a0064
-			public const int abc_tint_spinner = 2131361892;
+			public const int abc_tint_seek_thumb = 2131361892;
 			
 			// aapt resource value: 0x7f0a0065
-			public const int abc_tint_switch_track = 2131361893;
+			public const int abc_tint_spinner = 2131361893;
+			
+			// aapt resource value: 0x7f0a0066
+			public const int abc_tint_switch_track = 2131361894;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int accent_material_dark = 2131361800;
@@ -1387,6 +1387,9 @@ namespace Deals.Droid
 			// aapt resource value: 0x7f0a0013
 			public const int bright_foreground_material_light = 2131361811;
 			
+			// aapt resource value: 0x7f0a0052
+			public const int button_background = 2131361874;
+			
 			// aapt resource value: 0x7f0a004d
 			public const int button_clicked = 2131361869;
 			
@@ -1420,8 +1423,8 @@ namespace Deals.Droid
 			// aapt resource value: 0x7f0a0040
 			public const int design_bottom_navigation_shadow_color = 2131361856;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int design_error = 2131361894;
+			// aapt resource value: 0x7f0a0067
+			public const int design_error = 2131361895;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int design_fab_shadow_end_color = 2131361857;
@@ -1447,8 +1450,8 @@ namespace Deals.Droid
 			// aapt resource value: 0x7f0a0048
 			public const int design_snackbar_background_color = 2131361864;
 			
-			// aapt resource value: 0x7f0a0067
-			public const int design_tint_password_toggle = 2131361895;
+			// aapt resource value: 0x7f0a0068
+			public const int design_tint_password_toggle = 2131361896;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int dim_foreground_disabled_material_dark = 2131361814;
@@ -1576,11 +1579,11 @@ namespace Deals.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int switch_thumb_disabled_material_light = 2131361850;
 			
-			// aapt resource value: 0x7f0a0068
-			public const int switch_thumb_material_dark = 2131361896;
-			
 			// aapt resource value: 0x7f0a0069
-			public const int switch_thumb_material_light = 2131361897;
+			public const int switch_thumb_material_dark = 2131361897;
+			
+			// aapt resource value: 0x7f0a006a
+			public const int switch_thumb_material_light = 2131361898;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int switch_thumb_normal_material_dark = 2131361851;
@@ -2428,61 +2431,64 @@ namespace Deals.Droid
 			public const int fab_shadow_mini = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int fff = 2130837601;
+			public const int fav_background = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ggg = 2130837602;
+			public const int fff = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_add = 2130837603;
+			public const int ggg = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int info_background = 2130837604;
+			public const int ic_add = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int navigation_empty_icon = 2130837605;
+			public const int info_background = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int notification_action_background = 2130837606;
+			public const int navigation_empty_icon = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int notification_bg = 2130837607;
+			public const int notification_action_background = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int notification_bg_low = 2130837608;
+			public const int notification_bg = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int notification_bg_low_normal = 2130837609;
+			public const int notification_bg_low = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int notification_bg_low_pressed = 2130837610;
+			public const int notification_bg_low_normal = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int notification_bg_normal = 2130837611;
+			public const int notification_bg_low_pressed = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int notification_bg_normal_pressed = 2130837612;
+			public const int notification_bg_normal = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int notification_icon_background = 2130837613;
-			
-			// aapt resource value: 0x7f020072
-			public const int notification_template_icon_bg = 2130837618;
-			
-			// aapt resource value: 0x7f020073
-			public const int notification_template_icon_low_bg = 2130837619;
+			public const int notification_bg_normal_pressed = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int notification_tile_bg = 2130837614;
+			public const int notification_icon_background = 2130837614;
+			
+			// aapt resource value: 0x7f020073
+			public const int notification_template_icon_bg = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int notification_template_icon_low_bg = 2130837620;
 			
 			// aapt resource value: 0x7f02006f
-			public const int notify_panel_notification_icon_bg = 2130837615;
+			public const int notification_tile_bg = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int tooltip_frame_dark = 2130837616;
+			public const int notify_panel_notification_icon_bg = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int tooltip_frame_light = 2130837617;
+			public const int tooltip_frame_dark = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int tooltip_frame_light = 2130837618;
 			
 			static Drawable()
 			{
@@ -3464,6 +3470,9 @@ namespace Deals.Droid
 			
 			// aapt resource value: 0x7f0b001f
 			public const int bottom_sheet_behavior = 2131427359;
+			
+			// aapt resource value: 0x7f0b002a
+			public const int buy_now = 2131427370;
 			
 			// aapt resource value: 0x7f0b0020
 			public const int character_counter_pattern = 2131427360;

@@ -24,6 +24,9 @@ namespace Deals
         //Tag for this deal:
         public string mTags;
 
+        //Favourite for this deal:
+        public bool mFav;
+
 
 
         // Return the ID of the deal:
@@ -60,6 +63,12 @@ namespace Deals
         //Return the tags of the deal:
         public string Tags{
             get { return mTags; }
+        }
+
+        //Return is favourite of the deal:
+        public bool Favourite
+        {
+            get { return mFav; }
         }
 
 
