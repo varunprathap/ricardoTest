@@ -6,7 +6,7 @@ using Deals.ViewModel;
 using Foundation;
 using Deals.iOS.TableCell;
 
-namespace Deals.iOS
+namespace Deals.iOS.ViewController
 {
     public partial class ViewController : UIViewController
     {
@@ -50,6 +50,8 @@ namespace Deals.iOS
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.		
         }
+
+
         void OnItemSelected(object sender, EventArgs e)
         {
 

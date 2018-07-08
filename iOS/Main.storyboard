@@ -79,5 +79,57 @@
             </objects>
             <point key="canvasLocation" x="364" y="-21"/>
         </scene>
+        <scene sceneID="29254">
+            <objects>
+                <viewController id="29255" sceneMemberID="viewController" customClass="DealDetailViewController" storyboardIdentifier="DealDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" title="DealDetail">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="29252"/>
+                        <viewControllerLayoutGuide type="bottom" id="29253"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="29256">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="32890" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="668" width="414" height="46"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.12549019607843137" green="0.58823529411764708" blue="0.95294117647058818" alpha="1"/>
+                                <state key="normal" title="BUY IT NOW">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="33326" firstAttribute="width" constant="414"/>
+                                    <constraint id="33327" firstAttribute="height" constant="46"/>
+                                </constraints>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="32889" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="0.0" y="118" width="414" height="184"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="35789" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="-4661" y="-4778" width="10000" height="10000"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="33324" firstItem="29256" firstAttribute="trailing" secondItem="32890" secondAttribute="trailing"/>
+                            <constraint id="33552" firstItem="29256" firstAttribute="bottom" secondItem="32890" secondAttribute="bottom" constant="22"/>
+                            <constraint id="38537" firstItem="29256" firstAttribute="trailingMargin" secondItem="35789" secondAttribute="trailing" constant="10"/>
+                            <constraint id="38769" firstItem="32889" firstAttribute="centerX" secondItem="29256" secondAttribute="centerX"/>
+                            <constraint id="38771" firstItem="35789" firstAttribute="bottom" secondItem="32889" secondAttribute="bottom" constant="-20"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="DealImage" destination="32889" id="name-outlet-32889"/>
+                        <outlet property="FavButton" destination="35789" id="name-outlet-35789"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29257" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="-215"/>
+        </scene>
     </scenes>
 </document>

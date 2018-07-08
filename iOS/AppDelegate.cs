@@ -6,6 +6,8 @@ using UIKit;
 
 namespace Deals.iOS
 {
+
+
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register("AppDelegate")]
@@ -15,7 +17,7 @@ namespace Deals.iOS
 
         public static UIStoryboard storyboard = UIStoryboard.FromName("Main", null);
 
-
+        public const string DetailPageKey = "DetailPage";
 
         public override UIWindow Window
         {
@@ -29,9 +31,11 @@ namespace Deals.iOS
             // If not required for your application you can safely delete this method
             DispatcherHelper.Initialize(application);
             var nav = new NavigationService();
-            SimpleIoc.Default.Register<INavigationService>(() => nav);
+           
             nav.Initialize((UINavigationController)Window.RootViewController);
+            nav.Configure(DetailPageKey, "DealDetailViewController");
 
+            SimpleIoc.Default.Register<INavigationService>(() => nav);
 
             return true;
         }

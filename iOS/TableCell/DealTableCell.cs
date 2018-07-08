@@ -22,6 +22,7 @@ namespace Deals.iOS.TableCell
             base.LayoutSubviews();
             Caption.Text = deal.Caption;
             Image.Image = UIImage.FromBundle(deal.ImageUrl);
+
         }
     }
 }

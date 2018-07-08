@@ -94,6 +94,9 @@
     <Reference Include="GalaSoft.MvvmLight.Platform">
       <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\xamarin.ios10\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="Lottie.iOS">
+      <HintPath>..\packages\Com.Airbnb.iOS.Lottie.2.5.4\lib\xamarinios10\Lottie.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -110,6 +113,10 @@
     <ImageAsset Include="Assets.xcassets\fff.imageset\fff.jpg" />
     <ImageAsset Include="Assets.xcassets\ggg.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ggg.imageset\ggg.jpg" />
+    <ImageAsset Include="Assets.xcassets\fav.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\fav_uncheck.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\fav_uncheck.imageset\icons8-heart-50.png" />
+    <ImageAsset Include="Assets.xcassets\fav.imageset\icons8-heart-filled-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -120,6 +127,8 @@
     <Folder Include="Assets.xcassets\eee.imageset\" />
     <Folder Include="Assets.xcassets\fff.imageset\" />
     <Folder Include="Assets.xcassets\ggg.imageset\" />
+    <Folder Include="Assets.xcassets\fav.imageset\" />
+    <Folder Include="Assets.xcassets\fav_uncheck.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -145,6 +154,11 @@
     <Compile Include="DealTableView.designer.cs">
       <DependentUpon>DealTableView.cs</DependentUpon>
     </Compile>
+    <Compile Include="DealDetailViewController.cs" />
+    <Compile Include="DealDetailViewController.designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\anim.json" />
   </ItemGroup>
   <Import Project="..\Deals\Deals.projitems" Label="Shared" Condition="Exists('..\Deals\Deals.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
