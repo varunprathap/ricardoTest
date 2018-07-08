@@ -20,50 +20,44 @@ namespace Deals.Droid.Adapter
             ViewModelLocator.dealViewModel.PropertyChanged += DealViewModelOnPropertyChanged;
         }
 
-        private void DealViewModelOnPropertyChanged(object sender,PropertyChangedEventArgs args){
-
+        private void DealViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            //notify the adapater when searchtext changes.
             this.NotifyDataSetChanged();
         }
 
-        // Fill in the contents of the photo card (invoked by the layout manager):
+        // Fill in the contents
         public override void
             OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             var item = ViewModelLocator.dealViewModel.Deals[position];
             ((DealAdapterViewHolder)holder).BindDealViewModel(item);
-    
+
         }
 
-        // Return the number of photos available in the photo album:
+
         public override int ItemCount
         {
             get { return ViewModelLocator.dealViewModel.Deals.Count; }
         }
 
-       
+
 
         // Raise an event when the item-click takes place:
         void OnClick(int position, ImageView view)
         {
 
             ViewModelLocator.dealViewModel.NavigateCommand.Execute(ViewModelLocator.dealViewModel.Deals[position]);
-           
+
         }
 
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            // Inflate the CardView for the photo:
+            // Inflate the CardView for the deal:
             View itemView = LayoutInflater.From(parent.Context).
                         Inflate(Resource.Layout.DealView, parent, false);
-
-            // Create a ViewHolder to find and hold these view references, and 
-            // register OnClick with the view holder:
             DealAdapterViewHolder vh = new DealAdapterViewHolder(itemView, OnClick);
-
-
-           
-
             return vh;
         }
     }

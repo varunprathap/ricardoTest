@@ -24,10 +24,10 @@ namespace Deals.Droid
         // RecyclerView instance that displays the deal
         RecyclerView mRecyclerView;
 
-        // Layout manager that lays out each card in the RecyclerView:
+        // Layout manager
         RecyclerView.LayoutManager mLayoutManager;
 
-        // Adapter that accesses the data set (a photo album):
+        // Adapter that accesses the data set
         DealAdapter mAdapter;
 
         SearchView _searchView;
@@ -37,17 +37,12 @@ namespace Deals.Droid
         {
             base.OnCreate(savedInstanceState);
 
-
+            //Initialize the dispatcher and navigation service.
             DispatcherHelper.Initialize();
             var nav = new AppCompatNavigationService();
             SimpleIoc.Default.Register<INavigationService>(() => nav);
             nav.Configure(ViewModelLocator.DetailPageKey, typeof(DetailDeal));
 
-           
-           
-
-
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
 
@@ -59,21 +54,18 @@ namespace Deals.Droid
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
 
 
-            var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.AttachToRecyclerView(mRecyclerView);
+            //var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            //fab.AttachToRecyclerView(mRecyclerView);
 
 
 
             // Use the built-in linear layout manager:
             mLayoutManager = new LinearLayoutManager(this);
-            // Plug the layout manager into the RecyclerView:
+
             mRecyclerView.SetLayoutManager(mLayoutManager);
 
-            //............................................................
             // Adapter Setup:
 
-            // Create an adapter for the RecyclerView, and pass it the
-            // data set (the photo album) to manage:
             mAdapter = new DealAdapter();
 
 
@@ -90,9 +82,12 @@ namespace Deals.Droid
              
             MenuInflater.Inflate(Resource.Menu.main, menu);
             var item = menu.FindItem(Resource.Id.action_search);
+
+            //serachview placeholder text.
             _searchView = (SearchView)item.ActionView;
             _searchView.QueryHint = "search bag,shoe etc.";
 
+            //serachview textchange event and bind to view model.
             _searchView.QueryTextChange += (s, e) =>
             {
                 ViewModelLocator.dealViewModel.SearchCommand.Execute(_searchView.Query?.ToLower().ToString());

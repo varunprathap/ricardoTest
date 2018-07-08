@@ -28,20 +28,29 @@ namespace Deals.Droid
     public class DetailDeal : AppCompatActivityBase
     {
 
-
+        //Detail view model for the view.
         public DetailDealVM detailDealVM { get; private set; }
 
+        //bindings on the view.
         private readonly List<Binding> _bindings = new List<Binding>();
 
+        //Price Of Deal
+        private TextView _mPrice;
+        public TextView MPrice => _mPrice ?? (_mPrice = FindViewById<TextView>(Resource.Id.price));
+
+        //Title Of Deal
         private TextView _mTitle;
         public TextView MTitle => _mTitle ?? (_mTitle = FindViewById<TextView>(Resource.Id.title));
 
+        //Description Of Deal
         private TextView _mDescription;
         public TextView MDescription => _mDescription ?? (_mDescription = FindViewById<TextView>(Resource.Id.description));
 
+        //Favourite Of Deal
         private ImageButton _mFavourite;
         public ImageButton MFavourite => _mFavourite ?? (_mFavourite = FindViewById<ImageButton>(Resource.Id.favorite));
 
+        //Animation On Fav Click.
         private LottieAnimationView _mAnim;
         public LottieAnimationView Manim => _mAnim ?? (_mAnim = FindViewById<LottieAnimationView>(Resource.Id.animation_view)
                                                       );
@@ -51,7 +60,10 @@ namespace Deals.Droid
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.DealDetail);
+            //get the deal from navigation params.
             var param = Nav.GetAndRemoveParameter<Deal>(Intent);
+
+            //set the image 
             Resources res = Android.App.Application.Context.Resources;
             int id = (int)typeof(Resource.Drawable).GetField(param.ImageUrl).GetValue(null);
             ImageView imageView = (ImageView)FindViewById(Resource.Id.photo);
@@ -59,37 +71,33 @@ namespace Deals.Droid
             var myImage = BitmapFactory.DecodeResource(res, id);
             imageView.SetImageBitmap(myImage);
 
+            //intialize view model and set value.
             detailDealVM = ViewModelLocator.detailViewModel;
             detailDealVM.Title = param.mCaption;
             detailDealVM.Description = param.mDesc;
             detailDealVM.Favourite = param.mFav;
+            detailDealVM.Price = param.mPrice;
 
+            //Toggle the favourite button icon image.
             ToggleFavourite(detailDealVM.Favourite);
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             toolbar.SetBackgroundColor(Color.ParseColor("#d50000"));
-
             SetActionBar(toolbar);
-
-            //ActionBar.SetTitle(param.mCaption);
-
             toolbar.SetNavigationIcon(Resource.Mipmap.ic_arrow_back);
 
+            //set the command property on navigation button.
             toolbar.SetCommand("NavigationOnClick", detailDealVM.GoBackCommand);
 
+            //Set the command property on button.
             MFavourite.SetCommand("Click", detailDealVM.AddFavourite);
 
+            //Bind the view with viewmodel data and notification.
             BindView();
 
 
 
         }
-
-
-       
- 
-
-
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -98,12 +106,11 @@ namespace Deals.Droid
         }
 
 
-
         public void BindView()
         {
-
             _bindings.Add(this.SetBinding(() => detailDealVM.Title, () => MTitle.Text, BindingMode.Default));
             _bindings.Add(this.SetBinding(() => detailDealVM.Description, () => MDescription.Text, BindingMode.Default));
+            _bindings.Add(this.SetBinding(() => detailDealVM.Price, () => MPrice.Text, BindingMode.Default));
             detailDealVM.PropertyChanged -= DetailViewModelOnPropertyChanged;
             detailDealVM.PropertyChanged += DetailViewModelOnPropertyChanged;
 
@@ -120,6 +127,7 @@ namespace Deals.Droid
             }
         }
 
+        //Toggle favourite button action.
         private void ToggleFavourite(bool value)
         {
 
@@ -128,6 +136,7 @@ namespace Deals.Droid
                 MFavourite.SetImageResource(Resource.Mipmap.ic_favorite);
                 Manim.Visibility = ViewStates.Visible;
                 Manim.PlayAnimation();
+                //delay to dismiss the animation.
                 Task.Run(async () => { await Task.Delay(1500);
                     //new Handler().Post(UpdatePlayButtonText);
                     Manim.Visibility = ViewStates.Invisible;

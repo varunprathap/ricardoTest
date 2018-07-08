@@ -8,7 +8,7 @@ using Android.Widget;
 
 namespace Deals.Droid.Adapter
 {
-    public class DealAdapterViewHolder: RecyclerView.ViewHolder
+    public class DealAdapterViewHolder : RecyclerView.ViewHolder
     {
         public ImageView Image { get; private set; }
         public TextView Caption { get; private set; }
@@ -21,7 +21,7 @@ namespace Deals.Droid.Adapter
             // Locate and cache view references:
             Image = itemView.FindViewById<ImageView>(Resource.Id.imageView);
             Caption = itemView.FindViewById<TextView>(Resource.Id.textView);
-            Percentage= itemView.FindViewById<Button>(Resource.Id.percentage);
+            Percentage = itemView.FindViewById<Button>(Resource.Id.percentage);
 
             Typeface typeface = Typeface.CreateFromAsset(Android.App.Application.Context.Resources.Assets, "fonts/Pacifico-Regular.ttf");
             Caption.Typeface = typeface;
@@ -36,8 +36,6 @@ namespace Deals.Droid.Adapter
         public void BindDealViewModel(Deal deal)
         {
             Resources res = Android.App.Application.Context.Resources;
-            // Set the ImageView and TextView in this ViewHolder's CardView 
-            // from this position in the photo album:
             int id = (int)typeof(Resource.Drawable).GetField(deal.ImageUrl).GetValue(null);
             // Converting Drawable Resource to Bitmap
             var myImage = BitmapFactory.DecodeResource(res, id);

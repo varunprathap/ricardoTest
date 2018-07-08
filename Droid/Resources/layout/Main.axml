@@ -16,7 +16,7 @@
         android:scrollbars="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
-    <Refractored.Fab.FloatingActionButton
+<!-- <Refractored.Fab.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,5 +27,5 @@
         android:layout_margin="16dp"
         fab:fab_colorNormal="@color/button_normal"
         fab:fab_colorPressed="@color/button_clicked"
-        fab:fab_colorRipple="@color/ripple" />
+        fab:fab_colorRipple="@color/ripple" />-->
 </RelativeLayout>
