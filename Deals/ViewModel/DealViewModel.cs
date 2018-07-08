@@ -11,7 +11,7 @@ namespace Deals.ViewModel
         private RelayCommand<Deal> navigateCommand;
         private RelayCommand<string> searchCommand;
         private readonly INavigationService navigationService;
-        private readonly ObservableCollection<Deal> _refDeals = new ObservableCollection<Deal>(){
+        private ObservableCollection<Deal> _refDeals = new ObservableCollection<Deal>(){
 
             new Deal { mPhotoID = 1001, mCaption = "Lomo'Instant", mDesc = "Lomo'Instant Marrakesh Edition Lens Combo Instant Film Camera Flash", mPercentage = 50, mImageUrl = "aaa",mTags="camera",mFav=true },
             new Deal { mPhotoID = 1002, mCaption = "Adidas Gazelle OG", mDesc = "ADIDAS GAZELLE OG (Q23178) GREEN ADIDAS ORIGINALS CASUAL SHOES SNEAKERS", mPercentage = 40, mImageUrl = "eee",mTags="shoe",mFav=false },
@@ -66,12 +66,12 @@ namespace Deals.ViewModel
                         if (searchString != null && searchString.Length > 0)
                         {
 
-                        var result = _refDeals.Where(x => x.mCaption.ToLower().Contains(searchString)||x.mTags.ToLower().Contains(searchString)).AsEnumerable();
+                            var result = _refDeals.Where(x => x.mCaption.ToLower().Contains(searchString) || x.mTags.ToLower().Contains(searchString)).AsEnumerable();
                             Deals = new ObservableCollection<Deal>(result);
                         }
                         else
                         {
-                        Deals = _refDeals;
+                            Deals = _refDeals;
                         }
 
                     }));

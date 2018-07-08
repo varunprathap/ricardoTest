@@ -111,6 +111,10 @@
     <Reference Include="JimBobBennett.MvvmLight.AppCompat">
       <HintPath>..\packages\JimBobBennett.MvvmLight.AppCompat.1.1.3\lib\monoandroid71\JimBobBennett.MvvmLight.AppCompat.dll</HintPath>
     </Reference>
+    <Reference Include="Lottie.Android">
+      <HintPath>..\packages\Com.Airbnb.Android.Lottie.2.5.4\lib\monoandroid81\Lottie.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Java.Interop" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -191,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\Pacifico-Regular.ttf" />
+    <AndroidAsset Include="Assets\anim.json" />
   </ItemGroup>
   <Import Project="..\Deals\Deals.projitems" Label="Shared" Condition="Exists('..\Deals\Deals.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

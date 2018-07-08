@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -99,9 +98,28 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\aaa.imageset\aaa.jpg" />
+    <ImageAsset Include="Assets.xcassets\aaa.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bbb.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bbb.imageset\bbb.jpg" />
+    <ImageAsset Include="Assets.xcassets\ddd.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ddd.imageset\ddd.jpg" />
+    <ImageAsset Include="Assets.xcassets\eee.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\eee.imageset\eee.jpg" />
+    <ImageAsset Include="Assets.xcassets\fff.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\fff.imageset\fff.jpg" />
+    <ImageAsset Include="Assets.xcassets\ggg.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ggg.imageset\ggg.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="TableCell\" />
+    <Folder Include="Assets.xcassets\aaa.imageset\" />
+    <Folder Include="Assets.xcassets\bbb.imageset\" />
+    <Folder Include="Assets.xcassets\ddd.imageset\" />
+    <Folder Include="Assets.xcassets\eee.imageset\" />
+    <Folder Include="Assets.xcassets\fff.imageset\" />
+    <Folder Include="Assets.xcassets\ggg.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -118,6 +136,14 @@
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableCell\DealTableCell.cs" />
+    <Compile Include="TableCell\DealTableCell.designer.cs">
+      <DependentUpon>DealTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DealTableView.cs" />
+    <Compile Include="DealTableView.designer.cs">
+      <DependentUpon>DealTableView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="..\Deals\Deals.projitems" Label="Shared" Condition="Exists('..\Deals\Deals.projitems')" />

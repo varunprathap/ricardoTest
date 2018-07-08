@@ -18,6 +18,9 @@ using GalaSoft.MvvmLight.Views;
 using JimBobBennett.MvvmLight.AppCompat;
 using Android.Widget;
 using System.ComponentModel;
+using Com.Airbnb.Lottie;
+using Android.Animation;
+using System.Threading.Tasks;
 
 namespace Deals.Droid
 {
@@ -27,6 +30,7 @@ namespace Deals.Droid
 
 
         public DetailDealVM detailDealVM { get; private set; }
+
         private readonly List<Binding> _bindings = new List<Binding>();
 
         private TextView _mTitle;
@@ -37,6 +41,10 @@ namespace Deals.Droid
 
         private ImageButton _mFavourite;
         public ImageButton MFavourite => _mFavourite ?? (_mFavourite = FindViewById<ImageButton>(Resource.Id.favorite));
+
+        private LottieAnimationView _mAnim;
+        public LottieAnimationView Manim => _mAnim ?? (_mAnim = FindViewById<LottieAnimationView>(Resource.Id.animation_view)
+                                                      );
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -74,7 +82,14 @@ namespace Deals.Droid
             BindView();
 
 
+
         }
+
+
+       
+ 
+
+
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -89,7 +104,6 @@ namespace Deals.Droid
 
             _bindings.Add(this.SetBinding(() => detailDealVM.Title, () => MTitle.Text, BindingMode.Default));
             _bindings.Add(this.SetBinding(() => detailDealVM.Description, () => MDescription.Text, BindingMode.Default));
-
             detailDealVM.PropertyChanged -= DetailViewModelOnPropertyChanged;
             detailDealVM.PropertyChanged += DetailViewModelOnPropertyChanged;
 
@@ -101,6 +115,7 @@ namespace Deals.Droid
             if (args.PropertyName == "Favourite")
             {
                 ToggleFavourite(detailDealVM.Favourite);
+               
 
             }
         }
@@ -111,6 +126,14 @@ namespace Deals.Droid
             if (value)
             {
                 MFavourite.SetImageResource(Resource.Mipmap.ic_favorite);
+                Manim.Visibility = ViewStates.Visible;
+                Manim.PlayAnimation();
+                Task.Run(async () => { await Task.Delay(1500);
+                    //new Handler().Post(UpdatePlayButtonText);
+                    Manim.Visibility = ViewStates.Invisible;
+                    Manim.Progress = 1.0f;
+                });
+
 
             }
             else
@@ -118,6 +141,7 @@ namespace Deals.Droid
                 MFavourite.SetImageResource(Resource.Mipmap.ic_favorite_border);
             }
         }
+
 
         public AppCompatNavigationService Nav
         {

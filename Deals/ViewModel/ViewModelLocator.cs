@@ -25,6 +25,15 @@ namespace Deals.ViewModel
             }
         }
 
+
+        public DetailDealVM DetailViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<DetailDealVM>();
+            }
+        }
+
         public static DealViewModel dealViewModel => ServiceLocator.Current.GetInstance<DealViewModel>();
         public static DetailDealVM detailViewModel => ServiceLocator.Current.GetInstance<DetailDealVM>();
     }

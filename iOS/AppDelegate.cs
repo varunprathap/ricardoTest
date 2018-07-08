@@ -1,4 +1,7 @@
 ﻿using Foundation;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Threading;
+using GalaSoft.MvvmLight.Views;
 using UIKit;
 
 namespace Deals.iOS
@@ -10,6 +13,10 @@ namespace Deals.iOS
     {
         // class-level declarations
 
+        public static UIStoryboard storyboard = UIStoryboard.FromName("Main", null);
+
+
+
         public override UIWindow Window
         {
             get;
@@ -20,6 +27,11 @@ namespace Deals.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+            DispatcherHelper.Initialize(application);
+            var nav = new NavigationService();
+            SimpleIoc.Default.Register<INavigationService>(() => nav);
+            nav.Initialize((UINavigationController)Window.RootViewController);
+
 
             return true;
         }
