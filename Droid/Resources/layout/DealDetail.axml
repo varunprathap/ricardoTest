@@ -94,6 +94,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_below="@id/content"
+            android:id="@+id/buy_now"
             android:layout_height="wrap_content"
             android:text="@string/buy_now"
             android:background="@android:color/holo_blue_light"

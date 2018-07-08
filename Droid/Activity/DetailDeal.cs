@@ -50,6 +50,10 @@ namespace Deals.Droid
         private ImageButton _mFavourite;
         public ImageButton MFavourite => _mFavourite ?? (_mFavourite = FindViewById<ImageButton>(Resource.Id.favorite));
 
+        //Buy Noow Of Deal
+        private Button _mBuyNow;
+        public Button MBuyNow => _mBuyNow ?? (_mBuyNow = FindViewById<Button>(Resource.Id.buy_now));
+
         //Animation On Fav Click.
         private LottieAnimationView _mAnim;
         public LottieAnimationView Manim => _mAnim ?? (_mAnim = FindViewById<LottieAnimationView>(Resource.Id.animation_view)
@@ -77,6 +81,10 @@ namespace Deals.Droid
             detailDealVM.Description = param.mDesc;
             detailDealVM.Favourite = param.mFav;
             detailDealVM.Price = param.mPrice;
+            detailDealVM.Done = param.mDone;
+
+
+
 
             //Toggle the favourite button icon image.
             ToggleFavourite(detailDealVM.Favourite);
@@ -86,11 +94,16 @@ namespace Deals.Droid
             SetActionBar(toolbar);
             toolbar.SetNavigationIcon(Resource.Mipmap.ic_arrow_back);
 
+           
+
             //set the command property on navigation button.
             toolbar.SetCommand("NavigationOnClick", detailDealVM.GoBackCommand);
 
             //Set the command property on button.
             MFavourite.SetCommand("Click", detailDealVM.AddFavourite);
+
+            //set the command for buy now.
+            MBuyNow.SetCommand("Click", detailDealVM.ShowDoneCommand);
 
             //Bind the view with viewmodel data and notification.
             BindView();
@@ -111,8 +124,8 @@ namespace Deals.Droid
             _bindings.Add(this.SetBinding(() => detailDealVM.Title, () => MTitle.Text, BindingMode.Default));
             _bindings.Add(this.SetBinding(() => detailDealVM.Description, () => MDescription.Text, BindingMode.Default));
             _bindings.Add(this.SetBinding(() => detailDealVM.Price, () => MPrice.Text, BindingMode.Default));
-            detailDealVM.PropertyChanged -= DetailViewModelOnPropertyChanged;
-            detailDealVM.PropertyChanged += DetailViewModelOnPropertyChanged;
+             detailDealVM.PropertyChanged -= DetailViewModelOnPropertyChanged;
+             detailDealVM.PropertyChanged += DetailViewModelOnPropertyChanged;
 
         }
 
@@ -124,6 +137,10 @@ namespace Deals.Droid
                 ToggleFavourite(detailDealVM.Favourite);
                
 
+            }
+            else if (args.PropertyName == "Done")
+            {
+                RunOnUiThread(() => Toast.MakeText(this, "Buy It Now", ToastLength.Short).Show());
             }
         }
 

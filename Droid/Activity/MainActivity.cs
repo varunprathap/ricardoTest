@@ -41,8 +41,8 @@ namespace Deals.Droid
             DispatcherHelper.Initialize();
             var nav = new AppCompatNavigationService();
             SimpleIoc.Default.Register<INavigationService>(() => nav);
-            nav.Configure(ViewModelLocator.DetailPageKey, typeof(DetailDeal));
 
+            nav.Configure(ViewModelLocator.DetailPageKey, typeof(DetailDeal));
             SetContentView(Resource.Layout.Main);
 
 

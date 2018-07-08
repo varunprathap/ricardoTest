@@ -181,6 +181,11 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_arrow_back.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_arrow_back.png" />
     <AndroidResource Include="Resources\drawable\fav_background.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_shopping_cart.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_shopping_cart.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_shopping_cart.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_shopping_cart.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_shopping_cart.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Adapter\" />
@@ -195,6 +200,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\Pacifico-Regular.ttf" />
     <AndroidAsset Include="Assets\anim.json" />
+    <AndroidAsset Include="Assets\done.json" />
   </ItemGroup>
   <Import Project="..\Deals\Deals.projitems" Label="Shared" Condition="Exists('..\Deals\Deals.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
