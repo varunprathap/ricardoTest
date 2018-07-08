@@ -27,7 +27,8 @@ namespace Deals
         //Favourite for this deal:
         public bool mFav;
 
-
+        //Price for this deal;
+        public string mPrice;
 
         // Return the ID of the deal:
         public int PhotoID
@@ -69,6 +70,12 @@ namespace Deals
         public bool Favourite
         {
             get { return mFav; }
+        }
+
+        //Return the price of the deal:
+        public string Price
+        {
+            get { return mPrice; }
         }
 
 

@@ -16,7 +16,7 @@ namespace Deals.ViewModel
 
 
         private string _title;
-
+        //title
         public string Title
         {
 
@@ -28,7 +28,24 @@ namespace Deals.ViewModel
 
 
         }
+
+
+        private string _price;
+        //price.
+        public string Price
+        {
+
+            get { return _price; }
+            set
+            {
+                Set(() => Price, ref _price, value);
+            }
+
+
+        }
+
         private string _description;
+        //description
         public string Description
         {
 
@@ -41,11 +58,10 @@ namespace Deals.ViewModel
         }
 
         private bool _isFavourite;
-
-
+        //Favourite.
         public bool Favourite
         {
-            
+
             get { return _isFavourite; }
             set
             {
@@ -54,13 +70,13 @@ namespace Deals.ViewModel
 
         }
 
+        //Navigation back button.
         private RelayCommand _goBackCommand;
-
         public RelayCommand GoBackCommand => _goBackCommand ?? (_goBackCommand = new RelayCommand(() => navigationService.GoBack()));
 
         private RelayCommand _addFavourite;
-        public RelayCommand AddFavourite => _addFavourite ?? (_addFavourite = new RelayCommand(() => {
-
+        public RelayCommand AddFavourite => _addFavourite ?? (_addFavourite = new RelayCommand(() =>
+        {
             Favourite = !Favourite;
         }));
 
