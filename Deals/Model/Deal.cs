@@ -27,6 +27,9 @@ namespace Deals
         //Favourite for this deal:
         public bool mFav;
 
+        //Done for this deal:
+        public bool mDone;
+
         //Price for this deal;
         public string mPrice;
 
@@ -76,6 +79,12 @@ namespace Deals
         public string Price
         {
             get { return mPrice; }
+        }
+
+        //Return the Done of the deal:
+        public bool Done
+        {
+            get { return mDone; }
         }
 
 

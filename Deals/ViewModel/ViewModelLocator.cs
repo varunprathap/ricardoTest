@@ -1,5 +1,6 @@
 ﻿using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 
 namespace Deals.ViewModel
 {
@@ -11,6 +12,7 @@ namespace Deals.ViewModel
         {
             //set view model location provide.
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
             SimpleIoc.Default.Register<DealViewModel>();
             SimpleIoc.Default.Register<DetailDealVM>();
         }

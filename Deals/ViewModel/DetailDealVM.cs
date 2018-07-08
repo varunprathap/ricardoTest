@@ -8,10 +8,15 @@ namespace Deals.ViewModel
     public class DetailDealVM : ViewModelBase
     {
         private readonly INavigationService navigationService;
-        public DetailDealVM(INavigationService _navigationService)
+        private readonly IDialogService dialogService;
+
+
+
+        public DetailDealVM(INavigationService _navigationService,IDialogService _dialogService)
         {
 
             navigationService = _navigationService;
+            dialogService = _dialogService;
         }
 
 
@@ -70,15 +75,39 @@ namespace Deals.ViewModel
 
         }
 
+        private bool _done;
+        //Done.
+        public bool Done
+        {
+
+            get { return _done; }
+            set
+            {
+                Set(() => Done, ref _done, value);
+            }
+
+        }
+
+
         //Navigation back button.
         private RelayCommand _goBackCommand;
         public RelayCommand GoBackCommand => _goBackCommand ?? (_goBackCommand = new RelayCommand(() => navigationService.GoBack()));
 
+        //add favourite.
         private RelayCommand _addFavourite;
         public RelayCommand AddFavourite => _addFavourite ?? (_addFavourite = new RelayCommand(() =>
         {
             Favourite = !Favourite;
         }));
+
+        //Dialog service.
+        private RelayCommand _showDone;
+        public RelayCommand ShowDoneCommand => _showDone ?? (_showDone = new RelayCommand(() =>
+        {
+            Done = !Done;
+            
+        }));
+       
 
     }
 }
